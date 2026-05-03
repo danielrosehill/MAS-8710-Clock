@@ -4,6 +4,10 @@ Reverse-engineering and operational notes for an inexpensive WiFi LCD wall clock
 
 ![Product photo from vendor listing](docs/images/product.webp)
 
+Two units side-by-side, one configured for local time (UTC+3) and one for UTC, both pointed at the same LAN NTP server:
+
+![Two units, local time + UTC](docs/images/in-situ.jpg)
+
 ## Source
 
 - Vendor listing (AliExpress): <https://he.aliexpress.com/item/1005008532153360.html>
