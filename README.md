@@ -1,6 +1,6 @@
 # MAS-8710 WiFi LCD Clock
 
-Reverse-engineering and operational notes for an inexpensive WiFi LCD wall clock sold under several names. The casework Daniel owns is labelled **MAS-8710**, but the WiFi/firmware stack is shared with a wider family of "DIY ESP8266 Networking Clock Kit" devices and Midea-style WiFi modules — see [Identification](#identification) below.
+Reverse-engineering and operational notes for an inexpensive WiFi LCD wall clock sold under several names. The casework studied here is labelled **MAS-8710**, but the WiFi/firmware stack is shared with a wider family of "DIY ESP8266 Networking Clock Kit" devices and Midea-style WiFi modules — see [Identification](#identification) below.
 
 ![Product photo from vendor listing](docs/images/product.webp)
 
@@ -68,4 +68,4 @@ Out of the box, two units side-by-side **drift visibly relative to each other** 
 
 ## Repository scope
 
-This repo is product-focused — what the device is, what it exposes, and how to drive it. For Daniel's specific deployment (which units are on the LAN, which one displays UTC vs local, what NTP server they're pointed at), see the separate [`LAN-Clocks`](https://github.com/danielrosehill/LAN-Clocks) repo.
+This repo is product-focused — what the device is, what it exposes, and how to drive it. Deployment-specific details (LAN inventory, per-unit assignments, chosen NTP server) are intentionally out of scope and live elsewhere.

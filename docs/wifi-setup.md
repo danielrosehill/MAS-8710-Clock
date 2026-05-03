@@ -37,20 +37,20 @@ If you have a USB or built-in WiFi adapter on a workstation, you can drive the c
 nmcli -t -f IN-USE,SSID,SIGNAL,SECURITY device wifi list --rescan yes | grep -i 'config-'
 
 # Connect (the clock acts as a DHCP server, you'll get 192.168.4.X)
-nmcli dev wifi connect "Config-XXXXXX" password "33669999" ifname wlo1
+nmcli dev wifi connect "Config-XXXXXX" password "33669999" ifname <wifi-iface>
 
 # Read current state
 curl -s http://192.168.4.1/ | grep -oE 'lastSync:[^<]+'
 
 # Set NTP server
-curl -s "http://192.168.4.1/ntpSave?ntpServer=10.0.0.1"
+curl -s "http://192.168.4.1/ntpSave?ntpServer=<your-ntp-server>"
 
 # Set DST + timezone (integer hour offset, -12..+12)
-curl -s "http://192.168.4.1/setupSave?summerTime=1&timeZone=2"   # Israel local with DST
-curl -s "http://192.168.4.1/setupSave?summerTime=0&timeZone=0"   # UTC
+curl -s "http://192.168.4.1/setupSave?summerTime=1&timeZone=2"   # UTC+2 with DST on
+curl -s "http://192.168.4.1/setupSave?summerTime=0&timeZone=0"   # UTC, no DST
 
 # Done
-nmcli dev disconnect wlo1
+nmcli dev disconnect <wifi-iface>
 ```
 
 ## Captive AP intermittency

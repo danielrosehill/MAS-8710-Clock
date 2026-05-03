@@ -1,6 +1,6 @@
 # OSD Button Reference
 
-Settings that are **not** exposed via the web UI (LCD brightness, the three alarms, hourly chime, temperature offset) are reachable only via the physical buttons on the casework. The button semantics below are taken from the closest matching vendor manual ([DIY ESP8266 Networking Clock Kit, manuals.plus](https://manuals.plus/ae/1005006339767938)) and corroborated by behaviour observed on Daniel's units.
+Settings that are **not** exposed via the web UI (LCD brightness, the three alarms, hourly chime, temperature offset) are reachable only via the physical buttons on the casework. The button semantics below are taken from the closest matching vendor manual ([DIY ESP8266 Networking Clock Kit, manuals.plus](https://manuals.plus/ae/1005006339767938)) and corroborated by behaviour observed on the units studied.
 
 ## Buttons
 

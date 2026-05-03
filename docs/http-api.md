@@ -52,7 +52,7 @@ The vendor's English manual documents three independent alarms, manual + auto LC
 
 ### Timezone model is integer hours only
 
-Half-hour and 45-minute zones (India, Nepal, parts of Australia) are unrepresentable. DST is a global on/off — not rule-aware. For Israel: `summerTime=1, timeZone=2` during DST; flip `summerTime=0` when the country exits DST.
+Half-hour and 45-minute zones (India, Nepal, parts of Australia) are unrepresentable. DST is a global on/off — not rule-aware. For a UTC+2 zone with DST: `summerTime=1, timeZone=2` during DST; flip `summerTime=0` when the country exits DST. For a fixed UTC display: `summerTime=0, timeZone=0`.
 
 ## Useful invocations
 
@@ -61,7 +61,7 @@ Half-hour and 45-minute zones (India, Nepal, parts of Australia) are unrepresent
 curl -s http://<clock-ip>/ | grep -oE 'lastSync:[^<]+'
 
 # Point at LAN NTP server
-curl -s "http://<clock-ip>/ntpSave?ntpServer=10.0.0.1"
+curl -s "http://<clock-ip>/ntpSave?ntpServer=<your-ntp-server>"
 
 # Israel local with DST on
 curl -s "http://<clock-ip>/setupSave?summerTime=1&timeZone=2"
