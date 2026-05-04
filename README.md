@@ -26,9 +26,21 @@ The casework is unbranded ("MAS-8710" appears on the box but isn't a manufacture
 | Captive-portal password | `33669999` (vendor default, identical across units). |
 | Captive-portal gateway | `http://192.168.4.1`. |
 
+## Hardware (summary)
+
+| Item | Detail |
+|---|---|
+| MCU | **Espressif ESP8285** (ESP8266 core + 1 MB embedded flash) — confirmed from chip die markings |
+| Power | USB-C 5 V → AMS1117-3.3 LDO. USB-C is **power-only** (no USB-serial bridge on the board) |
+| Display | Front-panel segment LCD driven by an unidentified SOIC controller (U5) over a proprietary bus |
+| Backup | CR1220 coin cell for RTC retention across power loss |
+| Reflash interface | 5-pin UART header on the bottom edge — `GND / 3V3 / TX / RX / GPIO0`, pin order unverified by silkscreen |
+
+Full breakdown including unpopulated footprints and open questions: [`docs/hardware.md`](docs/hardware.md).
+
 ## What it does
 
-- 24-hour LCD with date and ambient temperature.
+- 4-digit 7-segment LCD with date and ambient temperature.
 - WiFi-only configuration (no Bluetooth, no app).
 - Time set automatically via NTP — server is configurable via the captive portal or LAN HTTP UI (firmware-dependent).
 - 3 independent alarms (set via OSD only — see below).
@@ -41,13 +53,14 @@ The casework is unbranded ("MAS-8710" appears on the box but isn't a manufacture
 |---|---|---|
 | Captive-portal AP at `192.168.4.1` | ✓ | ✓ |
 | LAN-side HTTP UI on TCP/80 | ✗ (port closed/filtered after WiFi join) | ✓ — full UI reachable, no auth |
-| OSD via SET / UP buttons on the casework | ✓ | ✓ |
+| OSD via the four rear-panel buttons (`SET` / `+` / `−` / `alarm`) | ✓ | ✓ |
 
-Two paths are documented in detail:
+Documented in detail:
 
+- **Hardware reference** — see [`docs/hardware.md`](docs/hardware.md)
+- **OSD button reference** — see [`docs/osd-buttons.md`](docs/osd-buttons.md)
 - **WiFi / NTP / timezone setup** — see [`docs/wifi-setup.md`](docs/wifi-setup.md)
 - **HTTP API (newer firmware)** — see [`docs/http-api.md`](docs/http-api.md)
-- **OSD button reference** — see [`docs/osd-buttons.md`](docs/osd-buttons.md)
 
 ## What is *not* exposed via HTTP
 

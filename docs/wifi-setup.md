@@ -61,7 +61,7 @@ Empirically the captive AP is **not always broadcasting** even on a unit that's 
 - Re-appearance does not require power-cycling — wait, re-scan, retry.
 - After a successful `setupSave`, the unit appears to drop the AP for a short period before re-broadcasting.
 
-If the captive AP is genuinely gone and the unit is on the LAN, on older-firmware units there is no way back into configuration without a factory reset (long-press SET — see [`osd-buttons.md`](osd-buttons.md)).
+If the captive AP is genuinely gone and the unit is on the LAN, on older-firmware units there is no way back into configuration without a factory reset (long-press `SET` ≥ 5 s — see [`osd-buttons.md`](osd-buttons.md)).
 
 ## Dual-band caveat
 
