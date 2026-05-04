@@ -61,6 +61,7 @@ Documented in detail:
 - **OSD button reference** — see [`docs/osd-buttons.md`](docs/osd-buttons.md)
 - **WiFi / NTP / timezone setup** — see [`docs/wifi-setup.md`](docs/wifi-setup.md)
 - **HTTP API (newer firmware)** — see [`docs/http-api.md`](docs/http-api.md)
+- **Troubleshooting** — see [`docs/troubleshooting.md`](docs/troubleshooting.md)
 
 ## What is *not* exposed via HTTP
 
